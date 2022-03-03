@@ -1,0 +1,21 @@
+<form style="padding:10px" [formGroup]="loginForm">
+  <h2>Login</h2>
+
+  <div class="form-group">
+    <ngb-alert type="danger" [dismissible]="false" *ngIf="isFieldInvalid('username')">
+      <strong>Oops!</strong> Username field is not valid.
+    </ngb-alert>
+    <input type="text" class="form-control" [ngClass]="{'is-invalid': isFieldInvalid('username') || isFormInvalid()}" id="loginUsername" placeholder="Username" #loginUsername formControlName="username">
+    <label for="loginUsername">Username</label>
+  </div>
+  <div class="form-group">
+    <ngb-alert type="danger" [dismissible]="false" *ngIf="isFieldInvalid('password')">
+      <strong>Oops!</strong> Password field is not valid.
+    </ngb-alert>
+    <input type="password" class="form-control" [ngClass]="{'is-invalid': isFieldInvalid('password')  || isFormInvalid()}" id="loginPassword" placeholder="Password" #loginPassword formControlName="password">
+    <label for="loginPassword">Password</label>
+  </div>
+  <button class="btn btn-outline-secondary" (click)="login(loginUsername.value, loginPassword.value);">
+    Login
+  </button>
+</form>

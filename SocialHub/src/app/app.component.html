@@ -1,0 +1,25 @@
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #E0A555;">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/Home" routerLinkActive="active">Social Hub</a>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+          <li ngbDropdown class="nav-item">
+            <a ngbDropdownToggle class="nav-link active">Login</a>
+            <app-login ngbDropdownMenu style="min-width:300px;"></app-login>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/Register">Register</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Lookup User" aria-label="Search">
+          <button class="btn btn-outline-secondary">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+</header>
+<main>
+  <router-outlet></router-outlet>
+</main>
